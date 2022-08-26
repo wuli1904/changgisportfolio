@@ -62,6 +62,7 @@
  					<input type="hidden" class="form-control" name='regDate' value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.regdate}"/>' readonly="readonly">
  					<input type="hidden" class="form-control" name='updateDate' value='<fmt:formatDate pattern = "yyyy/MM/dd" value = "${board.updatedate}"/>' readonly="readonly">
  					<c:if test="${result == 'fail'}"><h3 style="color:red">비밀번호를 확인해주세요</h3></c:if>
+ 					<c:if test="${result == 'nfail'}"><h3 style="color:red">입력정보를 확인해주세요</h3></c:if>
  					<button type="submit" data-oper='modify' class="btn btn-primary">글수정</button>
  					<button type="submit" data-oper='remove' class="btn btn-primary">삭제</button>
  					<button type="submit" data-oper='list' class="btn btn-primary">메인으로</button>

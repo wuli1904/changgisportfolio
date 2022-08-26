@@ -92,7 +92,7 @@ public class BoardController {
 			return "redirect:/board/modify?bno="+board.getBno();
 		}
 		}catch(Exception e) {
-			rttr.addFlashAttribute("result","fail");
+			rttr.addFlashAttribute("result","nfail");
 			return "redirect:/board/modify?bno="+board.getBno();
 		}
 	}
@@ -120,8 +120,11 @@ public class BoardController {
 		log.info("lregister:"+member);
 		service.lregister(member);
 		rttr.addFlashAttribute("result",member.getUno());
-		
-		return "redirect:/board/list";
+		res.setContentType("text/html; charset=euc-kr");
+		PrintWriter out = res.getWriter();
+		out.println("<script>alert(\"가입이 완료되었습니다. 로그인해주세요.\"); location.href='/board/list'</script>");
+		out.flush();
+		return "";
 		}else {
 		res.setContentType("text/html; charset=euc-kr");
 		PrintWriter out = res.getWriter();
