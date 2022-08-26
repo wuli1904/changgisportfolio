@@ -64,19 +64,19 @@
 										</form>
 									</div>
 								</div>
-                                <div class='dataTables_paginate paging_simple_numbers' style="float:right;">
+                                <div class='pull-right' style="float:right;">
                                 	<ul class="pagination">
                                 		<c:if test="${pageMaker.prev}">
-                                			<li class="page-item"><a href="${pageMaker.startPage -1}">이전</a>| 
+                                			<li class="paginate_button previous"><a href="${pageMaker.startPage -1}">이전</a>| 
                                 			</li>
                                 		</c:if>
                                 		
                                 		<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
-                                			<li class="page-item ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num }">${num}</a>|</li>
+                                			<li class="paginate_button ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num }">${num}</a>|</li>
                                 		</c:forEach>
                                 		
                                 		<c:if test="${pageMaker.next}">
-                                			<li class="page-item"><a href="${pageMaker.endPage +1 }">다음</a></li>
+                                			<li class="paginate_button next"><a href="${pageMaker.endPage +1 }">다음</a></li>
                                 		</c:if>
                                 	</ul>
                                 </div>
