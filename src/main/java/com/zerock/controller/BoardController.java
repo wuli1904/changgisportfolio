@@ -84,8 +84,7 @@ public class BoardController {
 		try {
 		log.info("modify: "+board);
 		if(service.passwdCheck(board)==true) {
-			if(service.modify(board)) {
-			}
+			service.modify(board);
 			return "redirect:/board/list";
 		}else {
 			rttr.addFlashAttribute("result","fail");
